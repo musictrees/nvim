@@ -45,3 +45,36 @@ vim.keymap.set("v", "<space>x", ":lua<CR>")
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+----- BreadOnPenguins mappings -----
+-- buffers
+vim.keymap.set("n", "<S-l>", ":bnext<CR>")
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>q", ":BufferClose<CR>")
+vim.keymap.set("n", "<leader>Q", ":BufferClose!<CR>")
+vim.keymap.set("n", "<leader>U", "::bufdo bd<CR>") --close all
+vim.keymap.set('n', '<leader>vs', ':vsplit<CR>:bnext<CR>') --ver split + open next buffer
+
+-- buffer position nav + reorder
+vim.keymap.set('n', '<AS-h>', '<Cmd>BufferMovePrevious<CR>')
+vim.keymap.set('n', '<AS-l>', '<Cmd>BufferMoveNext<CR>')
+vim.keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>')
+vim.keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>')
+vim.keymap.set('n', '<A-3>', '<Cmd>BufferGoto 3<CR>')
+vim.keymap.set('n', '<A-4>', '<Cmd>BufferGoto 4<CR>')
+vim.keymap.set('n', '<A-5>', '<Cmd>BufferGoto 5<CR>')
+vim.keymap.set('n', '<A-6>', '<Cmd>BufferGoto 6<CR>')
+vim.keymap.set('n', '<A-7>', '<Cmd>BufferGoto 7<CR>')
+vim.keymap.set('n', '<A-8>', '<Cmd>BufferGoto 8<CR>')
+vim.keymap.set('n', '<A-9>', '<Cmd>BufferGoto 9<CR>')
+vim.keymap.set('n', '<A-0>', '<Cmd>BufferLast<CR>')
+vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>')
+
+-- windows - ctrl nav, fn resize
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<F5>", ":resize +2<CR>")
+vim.keymap.set("n", "<F6>", ":resize -2<CR>")
+vim.keymap.set("n", "<F7>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<F8>", ":vertical resize -2<CR>")

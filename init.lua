@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- cache lua files for speed
+vim.loader.enable()
+
+-- builds fzf from source for better telescope performance
 vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)
     local name, kind = ev.data.spec.name, ev.data.kind
@@ -54,15 +58,6 @@ vim.pack.add({
     { src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' },
 })
 
--- terminal
-vim.api.nvim_create_autocmd('TermOpen', {
-    group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
-    callback = function()
-        vim.opt.number = false
-        vim.opt.relativenumber = false
-    end,
-})
-
 -- mini modules (i still dont know in which file to put these)
 require('mini.pairs').setup()
 require('mini.surround').setup()
@@ -72,23 +67,7 @@ require('mini.icons').setup()
 -- vim-easy-align (remap = true is required for <Plug> mappings)
 vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)", { remap = true, desc = "EasyAlign" })
 
--- Highlight when yanking (copying) text
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-    callback = function() vim.hl.on_yank() end,
-})
-
-vim.api.nvim_create_autocmd('PackChanged', {
-    callback = function(ev)
-        local name, kind = ev.data.spec.name, ev.data.kind
-        if name == 'nvim-treesitter' and (kind == 'install' or kind == 'update') then
-            if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
-            vim.cmd('TSUpdate')
-        end
-    end,
-})
-
+require('autocmd')
 require('lsp')
 require('navigation')
 require('nvim_opts')

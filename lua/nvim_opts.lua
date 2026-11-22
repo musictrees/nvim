@@ -65,3 +65,15 @@ vim.opt.wrap = false
 
 -- vertical ruler
 vim.opt.colorcolumn = "80"
+
+----- BreadOnPenguins options ------
+-- highlight cursor line
+vim.opt.cursorline = true
+
+-- faster and smoother scrolling
+vim.opt.ttyfast = true
+vim.opt.smoothscroll = true
+
+-- window titlebar
+vim.opt.title = true
+
