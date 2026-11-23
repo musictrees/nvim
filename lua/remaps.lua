@@ -10,6 +10,9 @@ vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 -- <C-Del> mimics regular ctrl + del deletion
 vim.keymap.set('i', '<C-Del>', '<C-o>dw')
 
+-- toggle line wrap
+vim.keymap.set("n", "<leader>W", ":set wrap!<CR>")
+
 -- terminal
 -- Leave terminal mode with a double Esc (a single Esc is passed to the program)
 vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])

@@ -60,7 +60,7 @@ vim.opt.listchars = {
   nbsp = "␣",
 }
 
--- no line wrap
+-- no line wrap -> leader W to toggle
 vim.opt.wrap = false
 
 -- vertical ruler
