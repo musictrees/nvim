@@ -1,6 +1,26 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- mini setup for VScode usage
+if vim.g.vscode then
+    vim.pack.add({
+        { src = 'https://github.com/junegunn/vim-easy-align' },
+        { src = 'https://github.com/nvim-mini/mini.nvim' },
+    })
+
+    require('mini.surround').setup()
+    vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)", { remap = true, desc = "EasyAlign" })
+
+    vim.api.nvim_create_autocmd('TextYankPost', {
+        group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+        callback = function() vim.hl.on_yank() end,
+    })
+
+    require('nvim_opts')
+    require('remaps')
+    return
+end
+
 -- cache lua files for speed
 vim.loader.enable()
 
