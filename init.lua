@@ -78,18 +78,13 @@ vim.pack.add({
     { src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' },
 })
 
--- mini modules (i still dont know in which file to put these)
-require('mini.pairs').setup()
-require('mini.surround').setup()
-require('mini.statusline').setup()
-require('mini.icons').setup()
-
--- vim-easy-align (remap = true is required for <Plug> mappings)
-vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)", { remap = true, desc = "EasyAlign" })
 
 require('config.autocmd')
 require('config.lsp')
-require('config.navigation')
 require('config.nvim_opts')
 require('config.remaps')
 require('config.themes')
+
+require('plugins.blink')
+require('plugins.mini')
+require('plugins.telescope')
