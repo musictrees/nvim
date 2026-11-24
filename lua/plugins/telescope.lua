@@ -7,9 +7,9 @@ vim.keymap.set('n', '<leader>fd', builtin.find_files)
 
 -- edit neovim files
 vim.keymap.set('n', '<leader>en', function ()
-    builtin.find_files {
-        cwd = vim.fn.stdpath("config")
-    }
+  builtin.find_files {
+    cwd = vim.fn.stdpath("config")
+  }
 end)
 
 -- f search

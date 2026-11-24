@@ -18,8 +18,8 @@ vim.keymap.set("n", "<leader>W", ":set wrap!<CR>")
 vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]])
 
 vim.keymap.set('n', '<leader>tt', function()
-    vim.cmd('botright 5split | terminal')
-    vim.cmd.startinsert()
+  vim.cmd('botright 5split | terminal')
+  vim.cmd.startinsert()
 end, { desc = 'Open terminal' })
 
 -- move command (similar to vs code alt)
