@@ -81,7 +81,7 @@ vim.pack.add({
 
 require('config.autocmd')
 require('config.lsp')
-require('config.nvim_opts')
+require('config.options')
 require('config.remaps')
 require('config.themes')
 
