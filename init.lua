@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- mini setup for VScode usage
+-- setup for VScode usage
 if vim.g.vscode then
     vim.pack.add({
         { src = 'https://github.com/junegunn/vim-easy-align' },
@@ -9,6 +9,7 @@ if vim.g.vscode then
     })
 
     require('mini.surround').setup()
+    require('mini.ai').setup()
     vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)", { remap = true, desc = "EasyAlign" })
 
     vim.api.nvim_create_autocmd('TextYankPost', {
