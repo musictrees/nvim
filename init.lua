@@ -1,3 +1,8 @@
+-- disabling netrw for nvim-tree compatibility
+-- has to be at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -40,12 +45,15 @@ vim.api.nvim_create_autocmd('PackChanged', {
 
 -- all of the git clone sources are here
 vim.pack.add({
-  { src = 'https://github.com/junegunn/vim-easy-align' },
-  { src = 'https://github.com/neovim/nvim-lspconfig' },
+  -- UI
+  { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
+  { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+  { src = 'https://github.com/romgrk/barbar.nvim' },
+  { src = 'https://github.com/lewis6991/gitsigns.nvim' },
 
   -- telescope
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/nvim-lua/plenary.nvim' },
-  { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
   { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope.nvim', version = vim.version.range('*')} ,
 
@@ -59,17 +67,15 @@ vim.pack.add({
   -- Formatting
   { src = 'https://github.com/stevearc/conform.nvim' },
 
-  -- git signs
-  { src = 'https://github.com/lewis6991/gitsigns.nvim' },
-
   -- JSX/TSX auto-close and rename tags
   { src = 'https://github.com/windwp/nvim-ts-autotag' },
 
   -- rust: Cargo.toml dependency versions
   { src = 'https://github.com/saecki/crates.nvim' },
 
-  -- motions
+  -- utils
   { src = 'https://github.com/nvim-mini/mini.nvim' },
+  { src = 'https://github.com/junegunn/vim-easy-align' },
 
   -- themes
   { src= 'https://github.com/folke/tokyonight.nvim.git' },
@@ -85,6 +91,8 @@ require('config.options')
 require('config.remaps')
 require('config.themes')
 
+require('plugins.barbar')
 require('plugins.blink')
 require('plugins.mini')
+require('plugins.nvim-tree')
 require('plugins.telescope')

@@ -4,6 +4,10 @@
       "rev": "642b0c595e11608b4c18219e93b88d7637af27bc",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "barbar.nvim": {
+      "rev": "337ecfadb8bf005050990bf2f624dc4fc828dabd",
+      "src": "https://github.com/romgrk/barbar.nvim"
+    },
     "blink.cmp": {
       "rev": "3d3631f641e6e9b60066f269f435d23c524ceeb0",
       "src": "https://github.com/saghen/blink.cmp"
@@ -67,6 +71,10 @@
     "nvim-lspconfig": {
       "rev": "221c43884319e791519f0d6c94a7f2fbcd653278",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-tree.lua": {
+      "rev": "7425a6a7ba18b8d283a327407701be85bb4bd8ff",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
       "rev": "074aa4422bf029908338e855d0c0f71470a971bb",
