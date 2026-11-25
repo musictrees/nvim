@@ -81,3 +81,28 @@ vim.keymap.set("n", "<F5>", ":resize +2<CR>")
 vim.keymap.set("n", "<F6>", ":resize -2<CR>")
 vim.keymap.set("n", "<F7>", ":vertical resize +2<CR>")
 vim.keymap.set("n", "<F8>", ":vertical resize -2<CR>")
+
+----- plugins -----
+--- nvim-tree ---
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- open file explorer
+
+--- telescope ---
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files)
+
+-- edit neovim files
+vim.keymap.set('n', '<leader>fn', function ()
+  builtin.find_files {
+    cwd = vim.fn.stdpath("config")
+  }
+end)
+
+-- f search
+vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+
+-- f buffers
+vim.keymap.set('n', '<leader>fb', builtin.buffers)
+
+-- f help
+vim.keymap.set('n', '<leader>fh', builtin.help_tags)
+
