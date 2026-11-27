@@ -60,6 +60,12 @@ vim.opt.listchars = {
   nbsp = "␣",
 }
 
+-- improved visual block selection at lines with different length of chars
+vim.opt.virtualedit = "block"
+
+-- preview replace changes in another buffer
+vim.opt.inccommand = "split"
+
 -- no line wrap -> leader W to toggle
 vim.opt.wrap = false
 
@@ -75,5 +81,7 @@ vim.opt.ttyfast = true
 vim.opt.smoothscroll = true
 
 -- window titlebar
-vim.opt.title = true
+vim.opt.title = false
+
+
 
