@@ -22,8 +22,8 @@ if vim.g.vscode then
     callback = function() vim.hl.on_yank() end,
   })
 
-  require('nvim_opts')
-  require('remaps')
+  require('config.options')
+  require('config.remaps')
   return
 end
 
